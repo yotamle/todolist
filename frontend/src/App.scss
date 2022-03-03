@@ -1,0 +1,164 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&family=Ubuntu:ital,wght@1,500&display=swap");
+
+
+:root {
+  --white: #fff;
+  --bg-color:#f5f4f4;
+  --text-color:#b1b1b1 ;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  max-width: 600px;
+  margin: auto;
+  background: linear-gradient(0.25turn, #7e68e0, #7fc8f8, #01497c);
+}
+
+.title {
+  font-size: 2.5rem;
+  padding-top: 10px;
+  font-family: "Ubuntu", sans-serif;
+  text-align: center;
+}
+
+.todo-panel {
+  background-color: var(--bg-color);
+  box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px,
+    rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px,
+    rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+  border-radius: 30px;
+  margin: 16% 10%;
+  padding: 10px 0;
+  .todo-list {
+    width: 90%;
+    margin: 14px auto;
+    border-radius: 10px;
+    background-color: var(--white);
+    padding: 4px 0 10px 0;
+  }
+  .blank {
+    background-color: transparent;
+    margin: 0;
+
+  }
+  span {
+    font-size: 14px;
+    color: var(--text-color);
+    margin: 0 8px;
+  }
+}
+
+.submit {
+  text-align: center;
+  width: 60%;
+  margin: 25px auto;
+  border-radius: 20px;
+  background-color: var(--white);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .todo-input {
+    padding: 0px 24px;
+    border: none;
+    border-radius: 20px;
+    font-size: 1rem;
+    font-weight: inherit;
+    background-color: var(--white);
+
+    &::placeholder {
+      color: var(--text-color);
+    }
+    &:focus {
+      outline: none;
+    }
+  }
+  .todo-submit {
+    border: none;
+    font-size: 1rem;
+    background: linear-gradient(0.25turn, #7e68e0, #7fc8f8, #01497c);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    color: var(--white);
+    cursor: pointer;
+    margin: 2px 0;
+  }
+  
+}
+
+.item {
+  border-radius: 10px;
+  margin: 20px;
+  padding: 16px 20px;
+  height: 100%;
+  background-color: var(--bg-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  p {
+    color: black;
+    inline-size: 250px;
+    overflow-wrap: break-word;
+  }
+  .show {
+    text-decoration: line-through;
+    color: var(--text-color);
+  }
+
+  .flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    button {
+      border: none;
+      font-size: 20px;
+      cursor: pointer;
+      background-color: transparent;
+    }
+    input[type="checkbox"] {
+      appearance: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 10px;
+      cursor: pointer;
+      width: 24px;
+      height: 24px;
+      border: 1px solid var(--text-color);
+      background-color: var(--white);
+      border-radius: 50%;
+      &:checked {
+        background: linear-gradient(0.25turn, #7e68e0, #7fc8f8, #01497c);
+      }
+      &::after {
+        font-family: "Font Awesome 5 Free";
+        content: "\f00c";
+        font-weight: 900;
+        font-size: 15px;
+        color: var(--white);
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 587px){
+  .submit {
+    width: fit-content;
+    .todo-input {
+      padding: 0 12px;
+    }
+  }
+  .item {
+      justify-content: space-between;
+    p {
+      inline-size: 100px;
+    }
+  }
+
+  
+}
